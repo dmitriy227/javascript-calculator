@@ -5,42 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400" rel="stylesheet">
     <title>Simple Calculator</title>
 </head>
 <body>
-    <div id="container">
-        <div id="calculator">
-            <div id="result">
-                <div id="output">0</div>
+    <h1>JavaScript Calculator</h1>
+    
+    <div id="calculator" class="calculator">
+        <div id="result">
+            <div id="output">0</div>
+        </div>
+        <div id="keyboard">
+            <div id="row1">
+                <button class="operators" id="clear">C</button>
+                <button class="operators" id="divide">&#247</button>
             </div>
-            <div id="keyboard">
-                <div id="row1">
-                    <button class="operators" id="clear">C</button>
-                </div>
-                <div id="row2">
-                    <button class="numbers" id="7">7</button>
-                    <button class="numbers" id="8">8</button>
-                    <button class="numbers" id="9">9</button>
-                    <button class="operators" id="divide">&#247</button>
-                </div>
-                <div id="row3">
-                    <button class="numbers" id="4">4</button>
-                    <button class="numbers" id="5">5</button>
-                    <button class="numbers" id="6">6</button>
-                    <button class="operators" id="multiply">&times</button>
-                </div>
-                <div id="row4">
-                    <button class="numbers" id="1">1</button>
-                    <button class="numbers" id="2">2</button>
-                    <button class="numbers" id="3">3</button>
-                    <button class="operators" id="subtract">-</button>
-                </div>
-                <div id="row5">
-                    <button class="numbers" id=".">.</button>
-                    <button class="numbers" id="0">0</button>
-                    <button class="equals" id="equals">=</button>
-                    <button class="operators" id="add">+</button>
-                </div>
+            <div id="row2">
+                <button class="numbers" id="7">7</button>
+                <button class="numbers" id="8">8</button>
+                <button class="numbers" id="9">9</button>
+                <button class="operators" id="multiply">&times</button>
+            </div>
+            <div id="row3">
+                <button class="numbers" id="4">4</button>
+                <button class="numbers" id="5">5</button>
+                <button class="numbers" id="6">6</button>
+                <button class="operators" id="subtract">-</button>
+            </div>
+            <div id="row4">
+                <button class="numbers" id="1">1</button>
+                <button class="numbers" id="2">2</button>
+                <button class="numbers" id="3">3</button>
+                <button class="operators" id="add">+</button>
+            </div>
+            <div id="row5">
+                <button class="numbers" id=".">.</button>
+                <button class="numbers" id="0">0</button>
+                <button class="equals" id="equals">=</button>
+                
             </div>
         </div>
     </div>
