@@ -29,6 +29,58 @@ var setCurrentNum = function() {
     output.innerHTML = currentNum;
 }
 
+// When: Operator is clicked. Store number to firstNum and save operator.
+var storeNum = function() {
+    firstNum = currentNum;
+    currentNum = '';
+    operator = this.getAttribute('id');
+}
+
+// When: Equals is clicked. Calculate and display result.
+var displayResult = function() {
+    // Convert string to numbers
+    firstNum = Number(firstNum);
+    currentNum = Number(currentNum);
+
+    // Perform calculation
+    switch (operator) {
+        case 'divide':
+            resultNum = firstNum / currentNum;
+            break;
+        
+        case 'multiply':
+            resultNum = firstNum * currentNum;
+            break;
+
+        case 'subtract':
+            resultNum = firstNum - currentNum;
+            break;
+
+        case 'add':
+            resultNum = firstNum + currentNum;
+            break;
+
+        // If equals is pressed without an operator, keep number and do nothing
+        default:
+            resultNum = currentNum;
+    }
+
+    // Display result
+    output.innerHTML = resultNum;
+
+    // Reset firstNum and keep result under currentNum
+    firstNum = 0;
+    currentNum = resultNum;
+}
+
+// When: Clear button is clicked. Clear everything.
+var clearAll = function() {
+    currentNum = '';
+    firstNum = '';
+    resultNum = '';
+    output.innerHTML = '0';
+}
+
 /* Click Events */
 
 // Click event for numbers
@@ -38,11 +90,11 @@ for (var i = 0; i < numbers.length; i++) {
 
 // Click event for operators
 for (var i = 0; i < operators.length; i++) {
-    operators[i].onclick = moveFirstNum;
+    operators[i].onclick = storeNum;
 }
 
 // Click event for equals
 equals.onclick = displayResult;
 
 // Click event for clear
-el('#clear').onclick = clearResult;
+el('#clear').onclick = clearAll;
